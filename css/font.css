@@ -1,0 +1,17 @@
+@font-face {
+  font-family: 'fuente';
+  src: url('css/fuente.woff2') format('woff2'),
+       url('css/fuente.woff') format('woff'),
+       url('css/fuente.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'fuentes';
+  src: url('css/oxygen.woff2') format('woff2'),
+       url('css/oxygen.woff') format('woff'),
+       url('css/oxygen.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}

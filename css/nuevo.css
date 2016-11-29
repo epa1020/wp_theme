@@ -1,0 +1,222 @@
+@CHARSET "UTF-8";
+.centrar-margen{
+	margin: 0 10%; 
+}
+.qui{
+	font-size: 18px;
+	font-family: fuente;
+	color: #000;
+}
+.h-scroll {
+    height:500px; /* %-height of the viewport */
+    overflow-y: scroll;
+}
+.img-mar{
+	margin:0 6px 0 0;
+}
+.mega-categorias > a:after{
+    content: url('../img/menuresponsie.png');
+	padding-left:5px; 
+		
+}
+.mega-flecha{
+	vertical-align: middle;
+	height:40px;
+}
+.mega-flecha > a{
+	font-family:fuentes;
+	font-size:1.6rem;
+ 	vertical-align: middle; 
+ 	margin-left: 30px;
+}
+
+.mega-flecha > a:after{
+font-family: 'Glyphicons Halflings';
+font-style: normal;
+font-weight: 300;
+position:absolute;
+right:3px;
+content:"\e250";
+
+}
+.mega-punto-rojo a{
+	padding-left:20px;
+}
+.mega-punto-rojo a:before{
+content: "•";
+color: #ea321f;
+font-size: 22px;
+margin-right: 8px;
+}
+.mega-vasos > a{
+	 padding : 8px 0 8px 50px;
+}
+.mega-vasos:before{
+	content: url('../img/Vasos.png');
+	position: absolute;
+	left:10px;
+	padding: 8px 0px ;
+	margin: 5px 0;
+}
+.mega-vasos:hover:before{
+	content: url('../img/Vasos-rojo.png');
+}
+.mega-cristaleria:before{
+	content: url('../img/icon-cristaleria.png');
+	position: absolute;
+	left:10px;
+	margin: 5px 0;
+	padding: 8px 0px ;
+}
+.mega-cristaleria:hover:before{
+	content: url('../img/icon-cristaleria-rojo.png');
+}
+.mega-cristaleria > a{
+	 padding : 8px 0 8px 50px;
+}
+.mega-juegos:before{
+	content: url('../img/juegos.png');
+	position: absolute;
+	left:10px;
+	margin: 5px 0;
+	padding: 8px 0px ;
+}
+.mega-juegos:hover:before{
+	content: url('../img/juegos-rojo.png');
+}
+.mega-juegos > a{
+	 padding : 8px 0 8px 50px;
+}
+.mega-tequileros:before{
+	content: url('../img/tequileros.png');
+	position: absolute;
+	left:10px;
+	margin: 5px 0;
+	padding: 8px 0px ;
+}
+.mega-tequileros:hover:before{
+	content: url('../img/tequileros-rojo.png');
+}
+.mega-tequileros > a{
+	 padding : 8px 0 8px 50px;
+}
+.mega-floreros:before{
+	content: url('../img/floreros.png');
+	position: absolute;
+	left:10px;
+	margin: 5px 0;
+	padding: 8px 0px ;
+}
+.mega-floreros:hover:before{
+	content: url('../img/floreros-rojo.png');
+}
+.mega-floreros > a{
+	 padding : 8px 0 8px 50px;
+}
+.mega-envases:before{
+	content: url('../img/envases.png');
+	position: absolute;
+	left:10px;
+	margin: 5px 0;
+	padding: 8px 0px ;
+}
+.mega-envases:hover:before{
+	content: url('../img/envases-rojo.png');
+}
+.mega-envases > a{
+	 padding : 8px 0 8px 50px;
+}
+.mega-tapaderas:before{
+	content: url('../img/tapaderas.png');
+	position: absolute;
+	left:10px;
+	margin: 5px 0;
+	padding: 8px 0px ;
+}
+.mega-tapaderas:hover:before{
+	content: url('../img/tapaderas-rojo.png');
+}
+.mega-tapaderas > a{
+	 padding : 8px 0 8px 50px;
+}
+.mega-bar:before{
+	content: url('../img/bar.png');
+	position: absolute;
+	left:10px;
+	margin: 5px 0;
+	padding: 8px 0px ;
+}
+.mega-bar:hover:before{
+	content: url('../img/bar-rojo.png');
+}
+.mega-bar > a{
+	 padding : 8px 0 8px 50px;
+}
+.face:before{
+	content:url('../img/facebook.png');
+	padding-right:5px;
+	    position: relative;
+    bottom: inherit;
+}
+.face:hover:before{
+	content:url('../img/facebook-rojo.png');
+	padding-right:5px;
+	    position: relative;
+    bottom: inherit;
+}
+.gplus:before{
+	content:url('../img/gplus.png');
+	padding-right:5px;
+	    position: relative;
+    bottom: inherit;
+}
+.gplus:hover:before{
+	content:url('../img/gplus-rojo.png');
+	padding-right:5px;
+}
+.pint:before{
+	content:url('../img/pinterest.png');
+	padding-right:5px;
+	    position: relative;
+    bottom: inherit;
+}
+.pint:hover:before{
+	content:url('../img/pinterest-rojo.png');
+	padding-right:5px;
+}
+.you:before{
+	content:url('../img/youtube.png');
+	padding-right:5px;
+	    position: relative;
+    bottom: inherit;
+}
+.you:hover:before{
+	content:url('../img/youtube-rojo.png');
+	padding-right:5px;
+	  position: relative;
+    bottom: inherit;
+}
+.insta:before{
+	content:url('../img/instagram.png');
+	padding-right:5px;
+	    position: relative;
+    bottom: inherit;
+}
+.insta:hover:before{
+	content:url('../img/instagram-rojo.png');
+	padding-right:5px;
+}
+.block{
+	display:block;
+	padding: 6px 0;
+	color:#fff;
+	position: relative;
+    bottom: -5px;
+}
+.block:hover,.block:link,.block:visited{
+	text-decoration:none;
+	color:#fff;
+}
+.footer-borde{
+	border-bottom: 1px solid #37749a;
+}
