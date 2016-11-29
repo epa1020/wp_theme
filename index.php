@@ -38,19 +38,21 @@
 <div class="col-md-1"></div>
  <div class="col-md-3">
  <div class="row"><div class="col-md-12 div-menu"> <div class="borde-inferior-rojo"><span class="glyphicon glyphicon-folder-open">&nbsp;CATEGORIAS</span> </div></div></div>
-echo desde php
 
 
-
+edward
 <div class="row">
   <div class="col-md-12 div-menu">
-     <ul class="list-group">
-        <?php wp_list_categories( array(
-            'orderby' => 'name',
+<?php
+  $args = array(
+            "walker"=>new CustomWalker(),
+             'orderby' => 'name',
             'hide_empty'          => 0,
             'hide_title_if_empty' => false,
-        ) ); ?> 
-      </ul>
+
+    );
+  wp_list_categories($args); 
+?>
   </div>
 </div>
 

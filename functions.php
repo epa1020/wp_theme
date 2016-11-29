@@ -161,4 +161,28 @@ function comer_dir(){
 	echo  '<input name="comer_dir" size="50" placeholder="Direccion" value="'.$comer_dir.'"/>'.
 			'<label> Telefono </label><input name="comer_tel" placeholder="Telefono" value="'.$comer_tel.'"/>';
 }
+
+
+
+/*custom walker for replace custom wordpress clases in a categories list*/
+
+	class CustomWalker extends Walker_Category {
+		function start_lvl(&$output, $depth=1, $args=array()) {  
+			$output .= "\n<ul class=\"list-group\">\n";  
+		}  
+
+		function end_lvl(&$output, $depth=0, $args=array()) {  
+			$output .= "</ul>\n";  
+		}  
+
+	
+		function start_el(&$output, $item, $depth=0, $args=array()) {  
+			$output .= "\n<li class='list-group-item'>".esc_attr($item->name);
+		}  
+
+		function end_el(&$output, $item, $depth=0, $args=array()) {  
+			$output .= "</li>\n";  
+		}  
+	}  
+
 ?>
