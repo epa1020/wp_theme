@@ -42,18 +42,24 @@ echo desde php
 
 
 
-<ul class="lista-cat">
-    <?php wp_list_categories( array(
-        'orderby' => 'name',
-        'hide_empty'          => 0,
-        'hide_title_if_empty' => false,
-    ) ); ?> 
-</ul>
+<div class="row">
+  <div class="col-md-12 div-menu">
+     <ul class="list-group">
+        <?php wp_list_categories( array(
+            'orderby' => 'name',
+            'hide_empty'          => 0,
+            'hide_title_if_empty' => false,
+        ) ); ?> 
+      </ul>
+  </div>
+</div>
 
 <div class="row">
 <div class="col-md-12 div-menu">
  <ul class="list-group">
-<li class="list-group-item"><a href="#" class="amenu"><img  width="32" alt="" src="<?php echo get_stylesheet_directory_uri(); ?>/img/icon-cristaleria.png"> Cristalería<span class="glyphicon glyphicon-triangle-right pull-right"></span></a></li>
+<li class="list-group-item">
+<a href="#" class="amenu">
+<img  width="32" alt="" src="<?php echo get_stylesheet_directory_uri(); ?>/img/icon-cristaleria.png"> Cristalería<span class="glyphicon glyphicon-triangle-right pull-right"></span></a></li>
 <li class="list-group-item"><a href="#" class="amenu"><img width="32" alt="" src="<?php echo get_stylesheet_directory_uri(); ?>/img/Vasos.png"> Vasos<span class="glyphicon glyphicon-triangle-right pull-right"></span></a></li>
 <li class="list-group-item"><a href="#" class="amenu"><img width="32" alt="" src="<?php echo get_stylesheet_directory_uri(); ?>/img/juegos.png"> Juegos<span class="glyphicon glyphicon-triangle-right pull-right"></span></a></li>
 <li class="list-group-item"><a href="#" class="amenu"><img width="32" alt="" src="<?php echo get_stylesheet_directory_uri(); ?>/img/bar.png"> Bar<span class="glyphicon glyphicon-triangle-right pull-right"></span></a></li>
