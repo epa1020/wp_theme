@@ -1,4 +1,35 @@
 <?php
+
+/*
+*INICIO
+*/
+
+/*------------------------------------------------------------------
+SOPORTE PARA Featured image
+-----------------------------------------------------------------*/
+add_theme_support( 'post-thumbnails' );
+/*------------------------------------------------------------------
+adminstrador del tema
+-----------------------------------------------------------------*/
+
+/**
+ * Required: set 'ot_theme_mode' filter to true.
+ */
+add_filter( 'ot_theme_mode', '__return_true' );
+
+/**
+ * Required: include OptionTree.
+ */
+require( trailingslashit( get_template_directory() ) . 'option-tree/ot-loader.php' );
+
+
+
+/*
+*FIN
+*/
+
+
+
 function css_resources(){	
 	wp_register_style( 'bootstrap', get_stylesheet_directory_uri().'/css/bootstrap.min.css' );
 	wp_enqueue_style('bootstrap');
@@ -167,6 +198,8 @@ function comer_dir(){
 /*custom walker for replace custom wordpress clases in a categories list*/
 
 	class CustomWalker extends Walker_Category {
+
+
 		function start_lvl(&$output, $depth=1, $args=array()) {  
 			$output .= "\n<ul class=\"list-group\">\n";  
 		}  
@@ -177,12 +210,150 @@ function comer_dir(){
 
 	
 		function start_el(&$output, $item, $depth=0, $args=array()) {  
-			$output .= "\n<li class='list-group-item'>".esc_attr($item->name);
+			$aImages = array(
+'Cristalería'=>"/img/icon-cristaleria.png",
+'Cristaleria'=>"/img/icon-cristaleria.png",
+'Sin categoría'=>"/img/icon-cristaleria.png",
+'Sin categoria'=>"/img/icon-cristaleria.png",
+'Vasos'=>"/img/Vasos.png",
+'Juegos'=>"/img/juegos.png",
+'Bar'=>"/img/bar.png",
+'Tequileros'=>"/img/tequileros.png",
+'Floreros'=>"/img/floreros.png",
+'Envases'=>"/img/envases.png",
+'Envase'=>"/img/envases.png",
+'Tapaderas'=>"/img/tapaderas.png",
+'Tapas'=>"/img/tapaderas.png",
+	 );
+
+			$output .= "\n<li class='list-group-item'>"
+			."<a href='"
+			.get_site_url()
+			."/"
+			.$item->slug
+			."'>"
+			."<img width='32' alt='' src='"
+			.get_stylesheet_directory_uri().$aImages [esc_attr($item->name)]
+			."'>"
+			.esc_attr($item->name)
+			."</a>";
 		}  
 
 		function end_el(&$output, $item, $depth=0, $args=array()) {  
-			$output .= "</li>\n";  
+			$output .= "<span class='glyphicon glyphicon-triangle-right pull-right'></span> </li>\n";  
 		}  
 	}  
+add_theme_support( 'post-thumbnails' );
+
+add_action('init', 'post_type_producto');
+
+	function post_type_producto() {
+	$labels = array(
+		'name' => __( 'Productos' ),
+		'singular_name' => __( 'Productos' ),
+		'add_new' => __( 'Añadir nuevo' ),
+		'add_new_item' => __( 'Añadir nuevo producto' ),
+		'edit' => __( 'Editar' ),
+		'edit_item' => __( 'Editar producto' ),
+		'new_item' => __( 'Nuevo producto' ),
+		'view' => __( 'Ver producto' ),
+		'view_item' => __( 'Ver producto' ),
+		'search_items' => __( 'Buscar producto' ),
+		'not_found' => __( 'No se han encontrado productos' ),
+		'not_found_in_trash' => __( 'No se han encontrado productos en la papelera' ),
+		'parent' => __( 'Producto predecesor' )
+	);
+ 
+	$supports =  array( 
+		'title', 
+		'editor', 
+		'thumbnail', 
+		'custom-fields', 
+		'revisions' 
+	);
+ 
+	$args =  array( 
+		'labels' => $labels,
+		'public' => true, 
+		'show_ui' => true,
+		'exclude_from_search' => false,
+		'menu_position' => 5,
+		'menu_icon' => get_bloginfo('template_url').'/images/icon-press.png',
+		'show_in_admin_bar' => true,
+		'supports' => $supports,
+		'has_archive' => true
+	);
+ 
+	register_post_type( 'producto', $args );
+	flush_rewrite_rules();
+}
+
+
+function my_taxonomies_product() {
+  $labels = array(
+    'name'              => _x( 'Categoría Producto', 'taxonomy general name' ),
+    'singular_name'     => _x( 'Categoría Producto', 'taxonomy singular name' ),
+    'search_items'      => __( 'Buscar Categoría' ),
+    'all_items'         => __( 'Todas las Categorías' ),
+    'parent_item'       => __( 'Parent Product Category' ),
+    'parent_item_colon' => __( 'Parent Product Category:' ),
+    'edit_item'         => __( 'Editar Categoría' ), 
+    'update_item'       => __( 'Actualizar Categoría' ),
+    'add_new_item'      => __( 'Agregar nueva Categoría' ),
+    'new_item_name'     => __( 'Nueva Categoría' ),
+    'menu_name'         => __( 'Categoría Productos' ),
+  );
+  $args = array(
+    'labels' => $labels,
+    'hierarchical' => true,
+  );
+  register_taxonomy( 'product_category', 'producto', $args );
+}
+add_action( 'init', 'my_taxonomies_product', 0 );
+
+
+
+add_action('init', 'post_type_quienessomos');
+
+	function post_type_quienessomos() {
+	$labels = array(
+		'name' => __( 'Quienes Somos' ),
+		'singular_name' => __( 'Quienes-somos' ),
+		'add_new' => __( 'Añadir nuevo' ),
+		'add_new_item' => __( 'Añadir nuevo Quienes Somos' ),
+		'edit' => __( 'Editar' ),
+		'edit_item' => __( 'Editar Quienes Somos' ),
+		'new_item' => __( 'Nuevo Quienes Somos' ),
+		'view' => __( 'Ver Quienes Somos' ),
+		'view_item' => __( 'Ver Quienes Somos' ),
+		'search_items' => __( 'Buscar Quienes Somos' ),
+		'not_found' => __( 'No se han encontrado productos' ),
+		'not_found_in_trash' => __( 'No se han encontrado información en la papelera' ),
+		'parent' => __( 'Quienes Somos predecesor' )
+	);
+ 
+	$supports =  array( 
+		'title', 
+		'editor', 
+		'thumbnail', 
+		'custom-fields', 
+		'revisions' 
+	);
+ 
+	$args =  array( 
+		'labels' => $labels,
+		'public' => true, 
+		'show_ui' => true,
+		'exclude_from_search' => false,
+		'menu_position' => 5,
+		'menu_icon' => get_bloginfo('template_url').'/images/icon-press.png',
+		'show_in_admin_bar' => true,
+		'supports' => $supports,
+		'has_archive' => true
+	);
+ 
+	register_post_type( 'quienessomos', $args );
+	flush_rewrite_rules();
+}
 
 ?>

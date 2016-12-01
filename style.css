@@ -104,6 +104,17 @@ h4.page-header-res b,h4.page-header-res img{
 .productos{
 	background-color:#f3f3f3;
 }
+/*menu de categorias*/
+li.list-group-item  a{
+	color: #6E6E6E;
+	cursor:pointer;
+	
+}
+li.list-group-item  a:hover{
+	color: #ea321f;
+	text-decoration: none;
+}
+/**/
 a.amenu{
 	color: #6E6E6E;
 	cursor:pointer;
